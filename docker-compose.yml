@@ -1,0 +1,7 @@
+version: ‘3.8'
+
+services:
+  React-application:
+    build: .
+    ports:
+      - "8080:5000"
