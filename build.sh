@@ -5,7 +5,7 @@ APPLICATION_NAME="react-app"
 DIRECTORY="build"
 username="vineeth2108"
 repo="capstone-dev"
-prod-repo="capstone-production"
+prodrepo="capstone-production"
 tag="latest"
 
 echo "checking and building the image"
@@ -25,7 +25,7 @@ if [[ $GIT_BRANCH == "dev" ]]; then
 
 elif [[ $GIT_BRANCH == "main" ]]; then
   #Buiding the docker image
-  docker build -t ${username}/${prod-repo}:${tag} .
-  echo "Prod Image ${username}/${prod-repo}:${tag} is build successfully."
+  docker build -t ${username}/${prodrepo}:${tag} .
+  echo "Prod Image ${username}/${prodrepo}:${tag} is build successfully."
 fi
 
