@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-            Dev_ImageName="vineeth/capstone-dev:latest"
+            Dev_ImageName="vineeth2108/capstone-dev:latest"
         }
     stages {
         stage('Checkout') {
