@@ -1,7 +1,6 @@
 #!/bin/bash
 
-DOCKER_USERNAME="vineeth2108"
-DOCKER_PASSWORD="Vineeth@2108"
+#DOCKER_USERNAME="vineeth2108"
 
 if [[ $GIT_BRANCH == "dev" ]]; then
     # Build your project
@@ -9,7 +8,7 @@ if [[ $GIT_BRANCH == "dev" ]]; then
     sh './build.sh'
     
     echo "Logging into Docker Hub..."
-    echo "$DOCKER_PASSWORD" | docker login --username "$DOCKER_USERNAME" --password-stdin
+    echo "$Dockerhub_password" | docker login --username "$Dockerhub_Username" --password-stdin
     docker images
     docker push vineeth2108/capstone-dev:latest
 
