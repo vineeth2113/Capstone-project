@@ -4,7 +4,7 @@
 APPLICATION_NAME="react-app"
 DIRECTORY="build"
 username="vineeth2108"
-repo="demo"
+repo="capstone-dev"
 Image_Tag="latest"
 
 #checking the directory is present if not the script fails.
