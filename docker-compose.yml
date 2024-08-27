@@ -1,9 +1,8 @@
 version: '3.8'
 
 services:
-  React-application:
-    vineeth2108:
-    image: "vineeth2108"
-  ports:
-    - "80:80"
+  vineeth2108:
+    build: .
+    ports:
+      - "80:80"
     restart: always
