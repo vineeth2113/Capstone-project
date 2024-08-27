@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #creating the name if the image.
-IMAGE_NAME="React-app"
+IMAGE_NAME="react-app"
 DIRECTORY="build"
 
 Image_Tag="latest"
@@ -12,7 +12,7 @@ if [ ! -d "$DIRECTORY" ]; then
 fi
 
 #Buiding the docker image
-docker build -t ${IMAGE_NAME}:${Image_Tag}
+docker build -t ${IMAGE_NAME}:${Image_Tag} .
 image="$IMAGE_NAME:$Image_Tag"
 
 echo "$image"
