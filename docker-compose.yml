@@ -2,8 +2,8 @@ version: '3.8'
 
 services:
   React-application:
-    react-capstone:
-    image: "react-capstone"
+    vineeth2108:
+    image: "vineeth2108"
   ports:
     - "80:80"
     restart: always
