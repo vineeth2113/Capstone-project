@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-          Dev_ImageName="vineeth/capstone-dev:latest"
+            Dev_ImageName="vineeth/capstone-dev:latest"
         }
     stages {
         stage('Checkout') {
@@ -21,8 +21,8 @@ pipeline {
         stage('push the image to dev repository') {
             steps {
                 script{
-                    withCredentials([usernamePassword(passwordVariable: 'Dockerhub_password', usernameVariable: 'Dockerhub_Username')]) {
-                        sh 'docker login -u $Dockerhub_Username -p $Dockerhub_password'
+                    withCredentials([usernamePassword(credentialsId: 'DockerCred', passwordVariable: 'DOCKERHUB_PASSWORD', usernameVariable: 'DOCKERHUB_USERNAME')])  {
+                        sh 'docker login -u $DOCKERHUB_USERNAME -p $DOCKERHUB_PASSWORD'
                         sh 'docker images'
                         sh 'docker push ${Dev_ImageName}'
                         sh 'docker logout'
