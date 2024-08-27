@@ -21,8 +21,8 @@ pipeline {
         stage('push the image to dev repository') {
             steps {
                 script{
-                    withCredentials([usernamePassword(credentialsId: 'DockerCred', passwordVariable: 'DOCKERHUB_PASSWORD', usernameVariable: 'DOCKERHUB_USERNAME')])  {
-                        sh 'docker login -u $DOCKERHUB_USERNAME -p $DOCKERHUB_PASSWORD'
+                    withCredentials([usernamePassword(credentialsId: 'DockerCred', passwordVariable: 'DOCKER_PASSWORD', usernameVariable: 'DOCKER_USERNAME')])  {
+                        sh 'echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin'
                         sh 'docker images'
                         sh 'docker push ${Dev_ImageName}'
                         sh 'docker logout'
