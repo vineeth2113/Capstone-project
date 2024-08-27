@@ -1,32 +1,37 @@
 pipeline {
     agent any
 
+    environment {
+          Dev_ImageName="vineeth/capstone-dev:latest"
+        }
     stages {
-        stage('test') {
+        stage('Checkout') {
             steps {
-                sh 'echo hello'
+                // Check out the code from the repository
+                git 'https://github.com/vineeth2113/Capstone-project.git'
             }
         }
-        stage('test1') {
+        stage('build') {
             steps {
-                sh 'echo $TEST'
+                sh './build.sh'
             }
         }
-        stage('test3') {
+        stage('push the image to dev repository') {
             steps {
-                script {
-
-                    if (env.BRANCH_NAME == 'main') {
-                        echo 'I only execute on the master branch'
-                    } else if(env.BRANCH_NAME == 'dev'){
-                        echo 'I only execute on dev'
-                    }
-                        else {
-                            echo 'There is a failure'
-
-                    }
+                withCredentials([usernamePassword(credentialsId: 'docker_cred', passwordVariable: 'Dockerhub_password', usernameVariable: 'Dockerhub_Username')]) {
+                    sh 'docker login -u $Dockerhub_Username -p $Dockerhub_password'
+                    sh 'docker push ${Dev_ImageName}'
+                    sh 'docker logout'
                 }
             }
+        }
+    }
+post {
+        success {
+            echo 'The image successfully pushed to the Development repository'
+        }
+        failure {
+            echo 'Pipefile failed'
         }
     }
 }
