@@ -27,10 +27,5 @@ fi
 
 echo "deploying the code on the port 80"
 
-docker run -p 80:80 vineeth2108
+docker-compose up
 
-handle_interrupt() {
-    echo "Interrupt signal received. Cleaning up..."
-    # Perform cleanup tasks here
-    exit 1
-}
