@@ -5,7 +5,7 @@ DOCKER_PASSWORD="Vineeth@2108"
 
 if [[ $GIT_BRANCH == "dev" ]]; then
     # Build your project
-    sh 'chmod +x build.sh'
+    chmod +x build.sh
     sh './build.sh'
     
     echo "Logging into Docker Hub..."
