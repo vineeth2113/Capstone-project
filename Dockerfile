@@ -3,7 +3,7 @@
 FROM nginx:latest
 
 #copying the files from machine to container.
-COPY build /usr/share/nginx/html
+COPY build/ /usr/share/nginx/html
 
 #Exposing the port.
 EXPOSE 80
