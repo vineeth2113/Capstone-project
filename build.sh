@@ -14,7 +14,7 @@ fi
 
 #Buiding the docker image
 docker build -t ${IMAGE_NAME}:${Image_Tag}
-
+image = ${IMAGE_NAME}:${Image_Tag}
 
 echo "Image ${IMAGE_NAME}:${Image_Tag} is build successfully."
 
