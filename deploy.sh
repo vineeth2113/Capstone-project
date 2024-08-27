@@ -3,7 +3,7 @@
 DOCKER_USERNAME="vineeth2108"
 DOCKER_PASSWORD="vineeth@2108"
 
-if [[ $GIT_BRANCH == "origin/dev" ]]; then
+if [[ $GIT_BRANCH == "dev" ]]; then
     # Build your project
     sh 'chmod +x build.sh'
     sh './build.sh'
