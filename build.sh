@@ -4,7 +4,7 @@
 IMAGE_NAME="React-app"
 DIRECTORY="build"
 
-Image_Tag=`date +%Y.%m.%d.%H.%M`
+Image_Tag="latest"
 
 #checking the directory is present if not the script fails.
 if [ ! -d "$DIRECTORY" ]; then
