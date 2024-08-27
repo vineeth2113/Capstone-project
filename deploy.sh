@@ -16,7 +16,7 @@ if [[ $GIT_BRANCH == "dev" ]]; then
     docker tag vineeth2108 vineeth2108/${repo}:${tag}
     docker push vineeth2108/${repo}:${tag}
     
-elif [[ $GIT_BRANCH == "origin/main" ]]; then
+elif [[ $GIT_BRANCH == "main" ]]; then
     chmod +x build.sh
     sh './build.sh'
     echo "$DOCKER_PASSWORD" | docker login --username "$DOCKER_USERNAME" --password-stdin
