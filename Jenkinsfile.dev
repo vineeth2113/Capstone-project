@@ -1,10 +1,10 @@
 pipeline {
-    agent{
-    docker {
+    agent {
+        docker {
             image 'docker:latest'
             args '-v /var/run/docker.sock:/var/run/docker.sock'
         }
-}
+    }
 
     environment {
             Dev_ImageName="vineeth/capstone-dev:latest"
