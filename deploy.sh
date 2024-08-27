@@ -1,6 +1,8 @@
 #!/bin/bash
 
 #DOCKER_USERNAME="vineeth2108"
+repo="capstone-dev"
+tag="latest"
 
 if [[ $GIT_BRANCH == "dev" ]]; then
     # Build your project
@@ -10,8 +12,9 @@ if [[ $GIT_BRANCH == "dev" ]]; then
     echo "Logging into Docker Hub..."
     echo "$Dockerhub_password" | docker login --username "$Dockerhub_Username" --password-stdin
     docker images
-    docker push vineeth2108/capstone-dev:latest
-
+    docker tag vineeth2108 vineeth2108/${repo}:${tag}
+    docker push vineeth2108
+    
 elif [[ $GIT_BRANCH == "origin/main" ]]; then
     chmod +x build.sh
     sh './build.sh'
