@@ -24,3 +24,8 @@ elif [[ $GIT_BRANCH == "origin/main" ]]; then
     docker tag vineeth2108 vineeth2108/${prodrepo}:${tag}
     docker push vineeth2108/${prodrepo}:${tag}
 fi
+
+echo "deploying the code on the port 80"
+
+docker run -p 80:80 vineeth2108
+
