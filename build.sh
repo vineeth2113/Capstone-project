@@ -15,7 +15,6 @@ if [ ! -d "$DIRECTORY" ]; then
 fi
 
 #Buiding the docker image
-sudo su
 docker build -t ${username}/${repo}:${Image_Tag} .
 
 echo "Image ${username}/${repo}:${Image_Tag} is build successfully."
