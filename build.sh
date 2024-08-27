@@ -7,6 +7,7 @@ username="vineeth2108"
 repo="capstone-dev"
 tag="latest"
 
+echo "checking and building the image"
 
 #checking the directory is present if not the script fails.
 if [ ! -d "$DIRECTORY" ]; then
