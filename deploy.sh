@@ -1,7 +1,7 @@
 #!/bin/bash
 
 DOCKER_USERNAME="vineeth2108"
-DOCKER_PASSWORD="vineeth@2108"
+DOCKER_PASSWORD="Vineeth@2108"
 
 if [[ $GIT_BRANCH == "dev" ]]; then
     # Build your project
