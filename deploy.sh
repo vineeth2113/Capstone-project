@@ -1,8 +1,10 @@
 #!/bin/bash
+
+DOCKER_USERNAME="vineeth2108"
+DOCKER_PASSWORD="vineeth@2108"
+
 if [[ $GIT_BRANCH == "origin/dev" ]]; then
     # Build your project
-    DOCKER_USERNAME="vineeth2108"
-    DOCKER_PASSWORD="vineeth@2108"
     sh 'chmod +x build.sh'
     sh './build.sh'
     
