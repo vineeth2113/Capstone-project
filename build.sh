@@ -15,7 +15,7 @@ if [ ! -d "$DIRECTORY" ]; then
 fi
 
 #Buiding the docker image
-docker build -t test .
+docker build -t ${username}/${repo} .
 
 echo "Image test is build successfully."
 
