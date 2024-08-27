@@ -18,5 +18,5 @@ fi
   #Buiding the docker image
   docker build -t ${username}/${repo}:${tag} .
 
-  echo "Dev Image ${username}/${repo}:${tag} is build successfully."
+  echo "Image ${username}/${repo}:${tag} is build successfully."
 
