@@ -25,7 +25,4 @@ elif [[ $GIT_BRANCH == "origin/main" ]]; then
     docker push vineeth2108/${prodrepo}:${tag}
 fi
 
-echo "deploying the code on the port 80"
-
-docker-compose up
 
