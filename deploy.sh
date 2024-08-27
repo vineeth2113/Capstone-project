@@ -17,6 +17,7 @@ if [[ $GIT_BRANCH == "dev" ]]; then
     docker push vineeth2108/${repo}:${tag}
     
 elif [[ $GIT_BRANCH == "main" ]]; then
+    echo "you are in main branch"
     chmod +x build.sh
     sh './build.sh'
     echo "$DOCKER_PASSWORD" | docker login --username "$DOCKER_USERNAME" --password-stdin
@@ -24,5 +25,7 @@ elif [[ $GIT_BRANCH == "main" ]]; then
     docker tag vineeth2108 vineeth2108/${prodrepo}:${tag}
     docker push vineeth2108/${prodrepo}:${tag}
 fi
-
+else
+    echo "Failed"
+fi
 
