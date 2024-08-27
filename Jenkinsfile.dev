@@ -13,6 +13,9 @@ pipeline {
         stage('build') {
             steps {
                 script{
+                    sh 'sudo usermod -aG docker $USER'
+                    sh 'newgrp docker'
+                    sh 'ls -l /var/run/docker.sock'
                     sh 'chmod +x build.sh'
                     sh './build.sh'
                 }
