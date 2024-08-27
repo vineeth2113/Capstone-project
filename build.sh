@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #creating the name if the image.
-IMAGE_NAME="Vineeth/React-app"
+IMAGE_NAME="React-app"
 DIRECTOR = "build"
 
 Image_Tag = `date +%Y.%m.%d.%H.%M`
