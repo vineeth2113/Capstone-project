@@ -4,8 +4,6 @@
 APPLICATION_NAME="react-app"
 DIRECTORY="build"
 username="vineeth2108"
-repo="capstone-dev"
-tag="latest"
 
 echo "checking and building the image"
 
@@ -16,7 +14,7 @@ if [ ! -d "$DIRECTORY" ]; then
   exit 1
 fi
   #Buiding the docker image
-  docker build -t ${username}/${repo}:${tag} .
+  docker build -t ${username} .
 
-  echo "Image ${username}/${repo}:${tag} is build successfully."
+  echo "Image ${username} is build successfully."
 
