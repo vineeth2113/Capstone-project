@@ -25,7 +25,7 @@ elif [[ $GIT_BRANCH == "main" ]]; then
     docker images
     docker tag vineeth2108 vineeth2108/${prodrepo}:${tag}
     docker push vineeth2108/${prodrepo}:${tag}
-fi
+    
 else
     echo "Failed"
 fi
