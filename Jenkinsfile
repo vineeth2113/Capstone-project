@@ -2,31 +2,17 @@ pipeline {
     agent any
 
     stages {
-        stage('test') {
+        stage('Build and Push Docker Image') {
             steps {
-                sh 'echo hello'
-            }
-        }
-        stage('test1') {
-            steps {
-                sh 'echo $TEST'
-            }
-        }
-        stage('test3') {
-            steps {
-                script {
+                // Grant executable permissions to the build script
+                sh 'chmod +x deploy.sh'
 
-                    if (env.BRANCH_NAME == 'main') {
-                        echo 'I only execute on the master branch'
-                    } else if(env.BRANCH_NAME == 'dev'){
-                        echo 'I only execute on dev'
-                    }
-                        else {
-                            echo 'There is a failure'
+                // Build the Docker image using the build script
+                sh './deploy.sh'
 
-                    }
-                }
+                
             }
         }
+
     }
 }
